@@ -1,0 +1,111 @@
+#include<ctime>
+#include<iostream>
+#define Z '+'
+#define X '-'
+#define C '*'
+#define V '/'
+using namespace std;
+int main() {
+
+	cout << "请输入题目数量：";
+
+
+	srand(time(0));
+	int k1, k2, k3, k4, m1, m2, m3,l1,l2,s,a,b;
+	int right = 0;
+	char n1, n2, n3;
+	cin >> b;
+	for (int i = 0; i < b; i++) {
+		k1 = rand()%10;
+		k2 = rand()%10;
+		k3 = rand()%10;
+		k4 = rand()%10;
+		m1 = rand()%4;
+		m2 = rand()%4;
+		m3 = rand()%4;
+		switch (m1) {
+			case 0:
+				n1 = Z;
+				l1 = k1 + k2;
+				break;
+			case 1:
+				n1 = X;
+				l1 = k1 - k2;
+				break;
+			case 2:
+				n1 = C;
+				l1 = k1 * k2;
+				break;
+			case 3:
+				n1 = V;
+				if (k2 == 0)
+					for (int j = 0;; j++) {
+						k2 = rand() % 10;
+						if (k2 != 0)break;
+					};
+				l1 = k1 / k2;
+				break;
+		}
+		switch (m3) {
+			case 0:
+				n3 = Z;
+				l2 = k3 + k4;
+				break;
+			case 1:
+				n3 = X;
+				l2 = k3 - k4;
+				break;
+			case 2:
+				n3 = C;
+				l2 = k3 * k4;
+				break;
+			case 3:
+				n3 = V;
+				if (k4 == 0)
+					for (int j = 0;; j++) {
+						k4 = rand() % 10;
+						if (k4 != 0)break;
+					};
+				l2 = k3 / k4;
+				break;
+		}
+		if (l2 == 0) {
+			b++;
+			continue;
+		}
+		switch (m2) {
+			case 0:
+				n2 = Z;
+				s = l1 + l2;
+				break;
+			case 1:
+				n2 = X;
+				s = l1 - l2;
+				break;
+			case 2:
+				n2 = C;
+				s = l1 * l2;
+				break;
+			case 3:
+				n2 = V;
+				s = l1 / l2;
+				break;
+		}
+		if (s - (int)s != 0) {
+			b++;
+			continue;
+		}
+		cout << "（" << k1 << n1 << k2 << ")" << n2 << "(" << k3 << n3 << k4 << ")=" << endl;
+		cin >> a;
+		if (a == s)
+			right++;
+
+	}
+	if(languagesigh==1)
+		cout << "您答对了" << right << "道题" << endl;
+	if (languagesigh == 2)
+		cout << "You are right " << right << " problems" << endl;
+	system("pause");
+	return 0;
+
+}
