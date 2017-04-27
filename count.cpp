@@ -1,5 +1,3 @@
-#include "count.h"
-
 double count(double r)
 {
 double s;
