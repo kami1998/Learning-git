@@ -1,0 +1,2 @@
+double count(double r);
+
