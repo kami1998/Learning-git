@@ -1,6 +1,4 @@
-
-		{
-			for (int i = 0; i < tempLine.length(); i++)
+for (int i = 10; i < tempLine.length(); i++)
 			{
 
 				int count = 0;
@@ -68,4 +66,3 @@
 				else continue;
 
 			}
-		}
